@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tahoma:wght@400;700&display=swap");
+
+:root {
+  --win-grey: #c0c0c0;
+  --win-grey-light: #dcdcdc;
+  --win-grey-dark: #808080;
+  --title-blue: #0a246a;
+  --title-blue-light: #1848c8;
+  --link-blue: #0000ee;
+  --away-yellow: #ffd800;
+  --online-green: #1a9c1a;
+  --offline-red: #b00000;
+  --border-black: #000000;
+  --font-display: "Press Start 2P", monospace;
+  --font-body: Tahoma, Verdana, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #000;
+  background: var(--win-grey-dark);
+  background-image: repeating-conic-gradient(
+    var(--win-grey-dark) 0% 25%,
+    #767676 0% 50%
+  );
+  background-size: 4px 4px;
+  min-height: 100vh;
+}
+
+/* Screws down border-radius everywhere on purpose -- retro UI is square. */
+* {
+  border-radius: 0 !important;
+}
+
+a {
+  color: var(--link-blue);
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+/* ---------- Window chrome ---------- */
+.win {
+  background: var(--win-grey);
+  border: 2px solid #fff;
+  border-right-color: var(--border-black);
+  border-bottom-color: var(--border-black);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6), inset -1px -1px 0 var(--win-grey-dark),
+    inset 1px 1px 0 var(--win-grey-light);
+}
+
+.title-bar {
+  background: linear-gradient(90deg, var(--title-blue), var(--title-blue-light));
+  color: #fff;
+  padding: 4px 6px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.title-bar-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.title-bar-dots span {
+  width: 12px;
+  height: 12px;
+  background: var(--win-grey);
+  border: 2px solid #fff;
+  border-right-color: var(--border-black);
+  border-bottom-color: var(--border-black);
+  display: inline-block;
+}
+
+.win-body {
+  padding: 14px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: 13px;
+  background: var(--win-grey);
+  border: 2px solid #fff;
+  border-right-color: var(--border-black);
+  border-bottom-color: var(--border-black);
+  padding: 6px 14px;
+  cursor: pointer;
+  color: #000;
+}
+
+.btn:active {
+  border-color: var(--border-black);
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  transform: translate(1px, 1px);
+}
+
+.btn:disabled {
+  color: var(--win-grey-dark);
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--title-blue);
+  color: #fff;
+  border-color: var(--title-blue-light);
+  border-right-color: #000;
+  border-bottom-color: #000;
+}
+
+.btn-danger {
+  background: var(--offline-red);
+  color: #fff;
+}
+
+/* ---------- Inputs ---------- */
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: 13px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 2px solid var(--border-black);
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  background: #fff;
+  box-shadow: inset 1px 1px 0 var(--win-grey-dark);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* ---------- Layout shells ---------- */
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.page-shell.center {
+  align-items: center;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 420px;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 780px;
+}
+
+.app-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--title-blue), 2px 2px 0 rgba(0, 0, 0, 0.6);
+  margin: 0 0 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ---------- Nav bar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.navbar .brand {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.navlinks {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Buddy list style cards (groups) ---------- */
+.buddy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buddy-item {
+  background: #fff;
+  border: 2px solid var(--border-black);
+  border-right-color: var(--win-grey-dark);
+  border-bottom-color: var(--win-grey-dark);
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.buddy-item .status-dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 6px;
+  border: 1px solid #000;
+}
+
+.status-open {
+  background: var(--online-green);
+}
+
+.status-full {
+  background: var(--offline-red);
+}
+
+.pixel-avatar {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #000;
+  object-fit: cover;
+  image-rendering: pixelated;
+  background: var(--win-grey-light);
+  flex-shrink: 0;
+}
+
+/* ---------- Tags / interests ---------- */
+.tag {
+  display: inline-block;
+  background: var(--win-grey-light);
+  border: 1px solid var(--border-black);
+  padding: 2px 6px;
+  font-size: 11px;
+  margin: 2px 4px 2px 0;
+}
+
+/* ---------- Error / empty / loading states ---------- */
+.alert-error {
+  background: #ffe0e0;
+  border: 2px solid var(--offline-red);
+  color: #7a0000;
+  padding: 8px 10px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px 10px;
+  color: var(--win-grey-dark);
+  font-size: 12px;
+}
+
+.loading-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ---------- Chat ---------- */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: #fff;
+  border: 2px solid var(--border-black);
+  border-right-color: var(--win-grey-dark);
+  border-bottom-color: var(--win-grey-dark);
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.chat-msg {
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.chat-msg .sender {
+  font-weight: bold;
+  color: var(--title-blue);
+}
+
+.chat-msg.own .sender {
+  color: #7a0000;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.chat-input-row input {
+  flex: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .navlinks {
+    flex-wrap: wrap;
+  }
+
+  .buddy-item {
+    flex-direction: column;
+  }
+}

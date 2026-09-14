@@ -1,4 +1,4 @@
-# Side Quest 🕹️
+# Serendipity 🕹️
 
 Find your crew for whatever you're doing next. SRM students post a bio, create
 or join "quests" (groups planning an activity — movies, sports, study

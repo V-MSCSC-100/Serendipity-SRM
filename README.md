@@ -85,5 +85,5 @@ of that specific group).
 
 ## Demo
 
-- Live demo:(https://vercel.com/v-mscsc-100/serendipity-srm-2)
+- Live demo: https://serendipity-srm-2.vercel.app/login
 - Video walkthrough: _add your video link here_
